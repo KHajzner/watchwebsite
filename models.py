@@ -12,6 +12,7 @@ class Movie(db.Model):
     title = db.Column(db.String(100), nullable=False, unique=True)
     startYear = db.Column(db.Integer, nullable=False)
     runtime = db.Column(db.Integer)
+    watchStatus = db.Column(db.String(100))
 
     def __init__(self, title, startYear, runtime):
         self.title = title
@@ -29,6 +30,7 @@ class TVShow(db.Model):
     seasons = db.Column(db.Integer)
     current_episode = db.Column(db.Integer)
     episodes = db.Column(db.Integer)
+    watchStatus = db.Column(db.String(100))
 
     def __init__(self, title, startYear, endYear, seasons, episodes):
         self.title = title

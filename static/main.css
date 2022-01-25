@@ -1,0 +1,16 @@
+body{
+    color: #C5C6C7;
+    background-color: #0B0c10;
+}
+a:link{
+    color: #66FCF1;
+    background: rgba(31, 40, 51, 0.3);
+    padding: 5px;
+    font-size: 20px;
+}
+a:visited{
+    color:#66FCF1;
+}
+a:hover{
+    color: #45A29E;
+}

@@ -13,11 +13,16 @@ class Movie(db.Model):
     startYear = db.Column(db.Integer, nullable=False)
     runtime = db.Column(db.Integer)
     watchStatus = db.Column(db.String(100))
+    ageRestriction = db.Column(db.Integer)
+    rating = db.Column(db.Integer)
 
-    def __init__(self, title, startYear, runtime):
+    def __init__(self, title, startYear, runtime, watchStatus, ageRestriction, rating):
         self.title = title
         self.startYear = startYear
         self.runtime = runtime
+        self.watchStatus = watchStatus
+        self.ageRestriction = ageRestriction
+        self.rating = rating
 
 
 class TVShow(db.Model):
@@ -31,13 +36,18 @@ class TVShow(db.Model):
     current_episode = db.Column(db.Integer)
     episodes = db.Column(db.Integer)
     watchStatus = db.Column(db.String(100))
+    ageRestriction = db.Column(db.Integer)
+    rating = db.Column(db.Integer)
 
-    def __init__(self, title, startYear, endYear, seasons, episodes):
+    def __init__(self, title, startYear, endYear, seasons, episodes, watchStatus, ageRestriction, rating):
         self.title = title
         self.startYear = startYear
         self.endYear = endYear
         self.seasons = seasons
         self.episodes = episodes
+        self.watchStatus = watchStatus
+        self.ageRestriction = ageRestriction
+        self.rating = rating
 
 
 class Genre(db.Model):

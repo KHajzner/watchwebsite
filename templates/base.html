@@ -10,23 +10,27 @@
 </head>
 
 <body>
-
-<style>
-    .table {
-        margin-left: auto;
-        margin-right: auto;
-    }
-</style>
-
 <section class="hero is-primary is-fullheight">
 
     <div class="hero-head">
         <nav class="navbar">
             <div class="container">
-                <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-menu">
                     <div class="navbar-end">
                         <a href="{{ url_for('index') }}" class="navbar-item">
                             Home
+                        </a>
+                                                <a href="{{ url_for('addNew') }}" class="navbar-item">
+                            Add New
+                        </a>
+                                                <a href="{{ url_for('movies') }}" class="navbar-item">
+                            Movies
+                        </a>
+                                                <a href="{{ url_for('tvshows') }}" class="navbar-item">
+                            TVShows
+                        </a>
+                                                <a href="{{ url_for('search') }}" class="navbar-item">
+                            Search
                         </a>
                     </div>
                 </div>

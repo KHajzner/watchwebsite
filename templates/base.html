@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CSC2031 Blog</title>
     <link rel="stylesheet" href="{{ url_for("static", filename="main.css") }}" type="text/css"/>
+        <script src="{{ url_for("static", filename="script.js") }}">
+    </script>
 </head>
 
 <body>
@@ -20,7 +22,7 @@
                         <a href="{{ url_for('index') }}" class="navbar-item">
                             Home
                         </a>
-                                                <a href="{{ url_for('addNew') }}" class="navbar-item">
+                                                <a href="{{ url_for('add.add') }}" class="navbar-item">
                             Add New
                         </a>
                                                 <a href="{{ url_for('movies') }}" class="navbar-item">

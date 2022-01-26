@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="box">
+                <form method="POST">
+                    <h2 class="title">Add New Genre</h2>
+                    <div class="field">
+                        {{ form.hidden_tag() }}
+                        <div class="control">
+                            {{ form.name(class="input", placeholder="Genre") }}
+                        </div>
+                        <div class="error">
+                            {% for error in form.name.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div>
+                        {{ form.submit(class="button is-info is-centered") }}
+                    </div>
+                </form>
+   {% for genre in genres %}
+        <strong>{{ genre.name }}</strong>
+                {% endfor %}
+            </div>
+{% endblock %}

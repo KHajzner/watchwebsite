@@ -50,7 +50,7 @@ h2{
   content: "";
   display: table;
   clear: both;
-}
+}/*
 
 .miniColumn {
     float: left;
@@ -77,4 +77,9 @@ h2{
 }
 .miniRow{
     padding: 80px;
+}*/
+
+table{
+    width: 100%;
+    text-align: left;
 }

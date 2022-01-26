@@ -15,43 +15,51 @@
             <div class="column left">
                 <h2 id="watching">Watching</h2>
                 {% for tvshow in watching %}
-                    <div class="miniRow">
-                        <div class="miniColumn title">{{ tvshow.title }}</div>
-                        <div class="miniColumn releaseYear">{{ tvshow.startYear }}</div>
-                        <div class="miniColumn runtime">{{ tvshow.endYear }}</div>
-                        <div class="miniColumn ageRestriction">{{ tvshow.ageRestriction }}</div>
-                        <div class="miniColumn rating">{{ tvshow.rating }}/10</div>
-                    </div>
+                    <table style="width:100%">
+                    <tr>
+                        <th style="width:40%" class="miniColumn title">{{ tvshow.title }}</th>
+                        <th style="width:10%" class="miniColumn releaseYear">{{ tvshow.startYear }}</th>
+                        <th style="width:10%" class="miniColumn runtime">{{ tvshow.endYear }}</th>
+                        <th style="width:10%" class="miniColumn ageRestriction">{{ tvshow.ageRestriction }}</th>
+                        <th style="width:10%" class="miniColumn rating">{{ tvshow.rating }}/10</th>
+                    </tr>
+</table>
                 {% endfor %}
                 <h2 id="towatch">Plan To Watch</h2>
                 {% for tvshow in toWatch %}
-                    <div class="miniRow">
-                        <div class="miniColumn title">{{ tvshow.title }}</div>
-                        <div class="miniColumn releaseYear">{{ tvshow.startYear }}</div>
-                        <div class="miniColumn runtime">{{ tvshow.endYear }}</div>
-                        <div class="miniColumn ageRestriction">{{ tvshow.ageRestriction }}</div>
-                        <div class="miniColumn rating">{{ tvshow.rating }}/10</div>
-                    </div>
+                         <table style="width:100%">
+                    <tr>
+                        <th style="width:40%" class="miniColumn title">{{ tvshow.title }}</th>
+                        <th style="width:10%" class="miniColumn releaseYear">{{ tvshow.startYear }}</th>
+                        <th style="width:10%" class="miniColumn runtime">{{ tvshow.endYear }}</th>
+                        <th style="width:10%" class="miniColumn ageRestriction">{{ tvshow.ageRestriction }}</th>
+                        <th style="width:10%" class="miniColumn rating">{{ tvshow.rating }}/10</th>
+                    </tr>
+</table>
                 {% endfor %}
                 <h2 id="completed">Completed</h2>
                 {% for tvshow in completed %}
-                    <div class="miniRow">
-                        <div class="miniColumn title">{{ tvshow.title }}</div>
-                        <div class="miniColumn releaseYear">{{ tvshow.startYear }}</div>
-                        <div class="miniColumn runtime">{{ tvshow.endYear }}</div>
-                        <div class="miniColumn ageRestriction">{{ tvshow.ageRestriction }}</div>
-                        <div class="miniColumn rating">{{ tvshow.rating }}/10</div>
-                    </div>
+                    <table style="width:100%">
+                    <tr>
+                        <th style="width:40%" class="miniColumn title">{{ tvshow.title }}</th>
+                        <th style="width:10%" class="miniColumn releaseYear">{{ tvshow.startYear }}</th>
+                        <th style="width:10%" class="miniColumn runtime">{{ tvshow.endYear }}</th>
+                        <th style="width:10%" class="miniColumn ageRestriction">{{ tvshow.ageRestriction }}</th>
+                        <th style="width:10%" class="miniColumn rating">{{ tvshow.rating }}/10</th>
+                    </tr>
+</table>
                 {% endfor %}
                 <h2 id="abandoned">Abandoned</h2>
                 {% for tvshow in abandoned %}
-                    <div class="miniRow">
-                        <div class="miniColumn title">{{ tvshow.title }}</div>
-                        <div class="miniColumn releaseYear">{{ tvshow.startYear }}</div>
-                        <div class="miniColumn runtime">{{ tvshow.endYear }}</div>
-                        <div class="miniColumn ageRestriction">{{ tvshow.ageRestriction }}</div>
-                        <div class="miniColumn rating">{{ tvshow.rating }}/10</div>
-                    </div>
+                      <table style="width:100%">
+                    <tr>
+                        <th style="width:40%" class="miniColumn title">{{ tvshow.title }}</th>
+                        <th style="width:10%" class="miniColumn releaseYear">{{ tvshow.startYear }}</th>
+                        <th style="width:10%" class="miniColumn runtime">{{ tvshow.endYear }}</th>
+                        <th style="width:10%" class="miniColumn ageRestriction">{{ tvshow.ageRestriction }}</th>
+                        <th style="width:10%" class="miniColumn rating">{{ tvshow.rating }}/10</th>
+                    </tr>
+</table>
                 {% endfor %}
             </div>
             <div class="column right">

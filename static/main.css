@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body{
     color: #C5C6C7;
     background-color: #0B0c10;
@@ -13,4 +16,58 @@ a:visited{
 }
 a:hover{
     color: #45A29E;
+}
+h2{
+    width: 25%;
+    background-color: #4ee6da;
+    padding: 10px;
+    color: #1F2833;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-left: 5px solid #0B0c10;
+}
+.column {
+        border-top: 3px solid #66FCF1;
+        border-bottom: 3px solid #66FCF1;
+    float: left;
+    background: #1F2833 ;
+    border-radius: 15px;
+    padding: 10px;
+    margin-left: 20px;
+}
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 20%;
+}
+.mainRow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.miniColumn {
+    float: left;
+}
+.title{
+    width: 30%;
+}
+.releaseYear{
+    width: 10%;
+}
+.runtime{
+    width: 10%
+}
+.ageRestriction{
+    width: 10%
+}
+.rating{
+    width: 10%
+}
+.miniRow:after {
+  content: "";
+  display: table;
+  clear: both;
 }

@@ -15,14 +15,6 @@ db = SQLAlchemy(app)
 def index():  # put application's code here
     return render_template('index.html')
 
-@app.route('/movies')
-def movies():  # put application's code here
-    return render_template('movies.html')
-
-@app.route('/tvshows')
-def tvshows():  # put application's code here
-    return render_template('tvshows.html')
-
 @app.route('/search')
 def search():  # put application's code here
     return render_template('search.html')
@@ -30,8 +22,10 @@ def search():  # put application's code here
 
 if __name__ == '__main__':
 
-    from add.views import add_blueprint
+    from tvshows.views import tvshow_blueprint
+    from movies.views import movies_blueprint
 
-    app.register_blueprint(add_blueprint)
+    app.register_blueprint(tvshow_blueprint)
+    app.register_blueprint(movies_blueprint)
 
     app.run()

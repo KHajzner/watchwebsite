@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 class="title is-1">Add New</h1>
+   <div class="box">
+                <form method="POST">
+                    <h2 class="title">Add New TV Show</h2>
+                    <div class="field">
+                        {{ form2.hidden_tag() }}
+                        <div class="control">
+                            {{ form2.title(class="input", placeholder="Title") }}
+                        </div>
+                        <div class="error">
+                            {% for error in form2.title.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            {{ form2.startYear(class="input", placeholder="startYear") }}
+                        </div>
+                        <div class="error">
+                            {% for error in form2.startYear.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            {{ form2.endYear(class="input", placeholder="endYear") }}
+                        </div>
+                        <div class="error">
+                            {% for error in form2.endYear.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                                    <div class="field">
+                        <div class="control">
+                            {{ form2.seasons(class="input", placeholder="seasons") }}
+                        </div>
+                        <div class="error">
+                            {% for error in form2.seasons.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                                    <div class="field">
+                        <div class="control">
+                            {{ form2.episodes(class="input", placeholder="episodes") }}
+                        </div>
+                        <div class="error">
+                            {% for error in form2.episodes.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            {{ form2.watchStatus(class="input", placeholder="watchStatus") }}
+                        </div>
+                        <div class="error">
+                            {% for error in form2.watchStatus.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            {{ form2.ageRestriction(class="input", placeholder="ageRestriction") }}
+                        </div>
+                        <div class="error">
+                            {% for error in form2.ageRestriction.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            {{ form2.rating(class="input", placeholder="rating") }}
+                        </div>
+                        <div class="error">
+                            {% for error in form2.rating.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div>
+                        {{ form2.submit(class="button is-info is-centered") }}
+                    </div>
+                </form>
+   </div>
+{% endblock %}

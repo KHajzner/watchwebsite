@@ -17,6 +17,10 @@ a:visited{
 a:hover{
     color: #45A29E;
 }
+.bar{
+    position: sticky;
+    top: 0;
+}
 h2{
     width: 25%;
     background-color: #4ee6da;
@@ -70,4 +74,7 @@ h2{
   content: "";
   display: table;
   clear: both;
+}
+.miniRow{
+    padding: 80px;
 }

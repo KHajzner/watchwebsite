@@ -3,5 +3,59 @@
 {% block content %}
 
     <h1 class="title is-1">Movie</h1>
+    <a href="#watching">Watching</a>
+    <a href="#towatch">Plan To Watch</a>
+    <a href="#completed">Completed</a>
+    <a href="#abandoned">Abandoned</a>
+    <a href="{{ url_for('movies.add_movie') }}" class="button">New Movie</a>
+    <div class="box">
+        <div class="mainRow">
+            <div class="column left">
+                <h2 id="watching">Watching</h2>
+                {% for movie in watching %}
+                    <div class="miniRow">
+                        <div class="miniColumn title">{{ movie.title }}</div>
+                        <div class="miniColumn releaseYear">{{ movie.startYear }}</div>
+                        <div class="miniColumn runtime">{{ movie.runtime }} minutes</div>
+                        <div class="miniColumn ageRestriction">{{ movie.ageRestriction }}</div>
+                        <div class="miniColumn rating">{{ movie.rating }}/10</div>
+                    </div>
+                {% endfor %}
+                <h2 id="towatch">Plan To Watch</h2>
+                {% for movie in toWatch %}
+                    <div class="miniRow">
+                        <div class="miniColumn title">{{ movie.title }}</div>
+                        <div class="miniColumn releaseYear">{{ movie.startYear }}</div>
+                        <div class="miniColumn runtime">{{ movie.runtime }} minutes</div>
+                        <div class="miniColumn ageRestriction">{{ movie.ageRestriction }}</div>
+                        <div class="miniColumn rating">{{ movie.rating }}/10</div>
+                    </div>
+                {% endfor %}
+                <h2 id="completed">Completed</h2>
+                {% for movie in completed %}
+                    <div class="miniRow">
+                        <div class="miniColumn title">{{ movie.title }}</div>
+                        <div class="miniColumn releaseYear">{{ movie.startYear }}</div>
+                        <div class="miniColumn runtime">{{ movie.runtime }} minutes</div>
+                        <div class="miniColumn ageRestriction">{{ movie.ageRestriction }}</div>
+                        <div class="miniColumn rating">{{ movie.rating }}/10</div>
+                    </div>
+                {% endfor %}
+                <h2 id="abandoned">Abandoned</h2>
+                {% for movie in abandoned %}
+                    <div class="miniRow">
+                        <div class="miniColumn title">{{ movie.title }}</div>
+                        <div class="miniColumn releaseYear">{{ movie.startYear }}</div>
+                        <div class="miniColumn runtime">{{ movie.runtime }} minutes</div>
+                        <div class="miniColumn ageRestriction">{{ movie.ageRestriction }}</div>
+                        <div class="miniColumn rating">{{ movie.rating }}/10</div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="column right">
+                <h2>Filter</h2>
 
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -83,3 +83,11 @@ table{
     width: 100%;
     text-align: left;
 }
+.openButton{
+    background-color: red;
+}
+.popup{
+    display: none;
+    position: fixed;
+    top: 0;
+}

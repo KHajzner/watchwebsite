@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, flash, redirect, url_for
 
 from app import db
 from models import Movie
-from movies.forms import NewMovieForm
+from movies.forms import NewMovieForm, EditMovie
 
 movies_blueprint = Blueprint("movies", __name__, template_folder="templates")
 
@@ -13,8 +13,8 @@ def movies():
     toWatch = Movie.query.filter_by(watchStatus="Plan to watch").all()
     completed = Movie.query.filter_by(watchStatus="Completed").all()
     abandoned = Movie.query.filter_by(watchStatus="Abandoned").all()
-
-    return render_template('movies.html', watching=watching, toWatch=toWatch, completed=completed, abandoned=abandoned)
+    form = EditMovie()
+    return render_template('movies.html', form=form, watching=watching, toWatch=toWatch, completed=completed, abandoned=abandoned)
 
 
 @movies_blueprint.route('/new_movie', methods=['GET', 'POST'])

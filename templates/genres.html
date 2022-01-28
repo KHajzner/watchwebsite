@@ -20,6 +20,23 @@
                         {{ form.submit(class="button is-info is-centered") }}
                     </div>
                 </form>
+                  <form method="POST">
+                    <h2 class="title">Remove Genre</h2>
+                    <div class="field">
+                        {{ form2.hidden_tag() }}
+                        <div class="control">
+                            {{ form2.name2(class="input", placeholder="Genre Remove") }}
+                        </div>
+                        <div class="error">
+                            {% for error in form2.name2.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div>
+                        {{ form2.submit2(class="button is-info is-centered") }}
+                    </div>
+                </form>
    {% for genre in genres %}
         <strong>{{ genre.name }}</strong>
                 {% endfor %}

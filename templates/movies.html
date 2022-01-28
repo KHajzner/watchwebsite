@@ -3,62 +3,93 @@
 {% block content %}
 
     <h1 class="title is-1">Movie</h1>
-        <div class="bar">
-    <a href="#watching">Watching</a>
-    <a href="#towatch">Plan To Watch</a>
-    <a href="#completed">Completed</a>
-    <a href="#abandoned">Abandoned</a>
-    <a href="{{ url_for('movies.add_movie') }}" class="button">New Movie</a>
-        </div>
+    <div class="bar">
+        <a href="#watching">Watching</a>
+        <a href="#towatch">Plan To Watch</a>
+        <a href="#completed">Completed</a>
+        <a href="#abandoned">Abandoned</a>
+        <a href="{{ url_for('movies.add_movie') }}" class="button">New Movie</a>
+    </div>
     <div class="box">
         <div class="mainRow">
             <div class="column left">
                 <h2 id="watching">Watching</h2>
-                {% for movie in watching %}
-                    <table style="width:100%">
+                <table style="width:100%">
                     <tr>
-                        <th style="width:40%" class="miniColumn title">{{ movie.title }}</th>
-                        <th style="width:10%" class="miniColumn releaseYear">{{ movie.startYear }}</th>
-                        <th style="width:10%" class="miniColumn runtime">{{ movie.runtime }} minutes</th>
-                        <th style="width:10%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</th>
-                        <th style="width:10%" class="miniColumn rating">{{ movie.rating }}/10</th>
+                        <th style="width:40%">Title</th>
+                        <th style="width:10%">Release Date</th>
+                        <th style="width:10%">Runtime</th>
+                        <th style="width:10%">Restrictions</th>
+                        <th style="width:10%">Rating</th>
                     </tr>
-                    </table>
-                {% endfor %}
+
+                    {% for movie in watching %}
+                        <tr>
+                            <td style="width:40%" class="miniColumn title">{{ movie.title }}</td>
+                            <td style="width:10%" class="miniColumn releaseYear">{{ movie.startYear }}</td>
+                            <td style="width:10%" class="miniColumn runtime">{{ movie.runtime }} minutes</td>
+                            <td style="width:10%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</td>
+                            <td style="width:10%" class="miniColumn rating">{{ movie.rating }}/10</td>
+                            <td style="width:10%">
+                                <button class="openButton" onClick="openForm()">Edit</button>
+                            </td>
+                            <div class="popup" id="editForm">
+                                <form method="POST">
+                                    <h3>Edit Movie</h3>
+                                    <div class="field">
+                                        {{ form.hidden_tag() }}
+                                        <div class="control">
+                                            {{ form.title(class="input", placeholder="Title") }}
+                                        </div>
+                                        <div class="error">
+                                            {% for error in form.title.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                <div>
+                                    <button onclick="closeForm()">{{ form.submit(class="button is-info is-centered") }}
+                                    </button></div>
+                                </form>
+                            </div>
+                        </tr>
+
+                        </table>
+                    {% endfor %}
                 <h2 id="towatch">Plan To Watch</h2>
                 {% for movie in toWatch %}
-                                      <table style="width:100%">
-                    <tr>
-                        <th style="width:40%" class="miniColumn title">{{ movie.title }}</th>
-                        <th style="width:10%" class="miniColumn releaseYear">{{ movie.startYear }}</th>
-                        <th style="width:10%" class="miniColumn runtime">{{ movie.runtime }} minutes</th>
-                        <th style="width:10%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</th>
-                        <th style="width:10%" class="miniColumn rating">{{ movie.rating }}/10</th>
-                    </tr>
+                    <table style="width:100%">
+                        <tr>
+                            <th style="width:40%" class="miniColumn title">{{ movie.title }}</th>
+                            <th style="width:10%" class="miniColumn releaseYear">{{ movie.startYear }}</th>
+                            <th style="width:10%" class="miniColumn runtime">{{ movie.runtime }} minutes</th>
+                            <th style="width:10%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</th>
+                            <th style="width:10%" class="miniColumn rating">{{ movie.rating }}/10</th>
+                        </tr>
                     </table>
                 {% endfor %}
                 <h2 id="completed">Completed</h2>
                 {% for movie in completed %}
-                                       <table style="width:100%">
-                    <tr>
-                        <th style="width:40%" class="miniColumn title">{{ movie.title }}</th>
-                        <th style="width:10%" class="miniColumn releaseYear">{{ movie.startYear }}</th>
-                        <th style="width:10%" class="miniColumn runtime">{{ movie.runtime }} minutes</th>
-                        <th style="width:10%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</th>
-                        <th style="width:10%" class="miniColumn rating">{{ movie.rating }}/10</th>
-                    </tr>
+                    <table style="width:100%">
+                        <tr>
+                            <th style="width:40%" class="miniColumn title">{{ movie.title }}</th>
+                            <th style="width:10%" class="miniColumn releaseYear">{{ movie.startYear }}</th>
+                            <th style="width:10%" class="miniColumn runtime">{{ movie.runtime }} minutes</th>
+                            <th style="width:10%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</th>
+                            <th style="width:10%" class="miniColumn rating">{{ movie.rating }}/10</th>
+                        </tr>
                     </table>
                 {% endfor %}
                 <h2 id="abandoned">Abandoned</h2>
                 {% for movie in abandoned %}
-                                      <table style="width:100%">
-                    <tr>
-                        <th style="width:40%" class="miniColumn title">{{ movie.title }}</th>
-                        <th style="width:10%" class="miniColumn releaseYear">{{ movie.startYear }}</th>
-                        <th style="width:10%" class="miniColumn runtime">{{ movie.runtime }} minutes</th>
-                        <th style="width:10%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</th>
-                        <th style="width:10%" class="miniColumn rating">{{ movie.rating }}/10</th>
-                    </tr>
+                    <table style="width:100%">
+                        <tr>
+                            <th style="width:40%" class="miniColumn title">{{ movie.title }}</th>
+                            <th style="width:10%" class="miniColumn releaseYear">{{ movie.startYear }}</th>
+                            <th style="width:10%" class="miniColumn runtime">{{ movie.runtime }} minutes</th>
+                            <th style="width:10%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</th>
+                            <th style="width:10%" class="miniColumn rating">{{ movie.rating }}/10</th>
+                        </tr>
                     </table>
                 {% endfor %}
             </div>

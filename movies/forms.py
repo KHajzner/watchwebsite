@@ -12,3 +12,6 @@ class NewMovieForm(FlaskForm):
     rating = IntegerField()
     submit = SubmitField()
 
+class EditMovie(FlaskForm):
+    title = StringField(validators=[DataRequired()])
+    submit = SubmitField()

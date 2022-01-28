@@ -26,72 +26,85 @@
                     {% for movie in watching %}
                         <tr>
                             <td style="width:40%" class="miniColumn title">{{ movie.title }}</td>
-                            <td style="width:10%" class="miniColumn releaseYear">{{ movie.startYear }}</td>
-                            <td style="width:10%" class="miniColumn runtime">{{ movie.runtime }} minutes</td>
-                            <td style="width:10%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</td>
-                            <td style="width:10%" class="miniColumn rating">{{ movie.rating }}/10</td>
-                            <td style="width:10%">
-                                <button class="openButton" onClick="openForm()">Edit</button>
+                            <td style="width:12%" class="miniColumn releaseYear">{{ movie.startYear }}</td>
+                            <td style="width:12%" class="miniColumn runtime">{{ movie.runtime }} minutes</td>
+                            <td style="width:12%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</td>
+                            <td style="width:12%" class="miniColumn rating">{{ movie.rating }}/10</td>
+                            <td style="width:12%">
+                                <a href="{{ url_for('movies.update_movie', id=movie.id)}}">Edit</a>
                             </td>
-                            <div class="popup" id="editForm">
-                                <form method="POST">
-                                    <h3>Edit Movie</h3>
-                                    <div class="field">
-                                        {{ form.hidden_tag() }}
-                                        <div class="control">
-                                            {{ form.title(class="input", placeholder="Title") }}
-                                        </div>
-                                        <div class="error">
-                                            {% for error in form.title.errors %}
-                                                {{ error }}
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                <div>
-                                    <button onclick="closeForm()">{{ form.submit(class="button is-info is-centered") }}
-                                    </button></div>
-                                </form>
-                            </div>
                         </tr>
-
-                        </table>
                     {% endfor %}
+                </table>
                 <h2 id="towatch">Plan To Watch</h2>
-                {% for movie in toWatch %}
-                    <table style="width:100%">
+                <table style="width:100%">
+                    <tr>
+                        <th style="width:40%">Title</th>
+                        <th style="width:10%">Release Date</th>
+                        <th style="width:10%">Runtime</th>
+                        <th style="width:10%">Restrictions</th>
+                        <th style="width:10%">Rating</th>
+                    </tr>
+
+                    {% for movie in toWatch %}
                         <tr>
-                            <th style="width:40%" class="miniColumn title">{{ movie.title }}</th>
-                            <th style="width:10%" class="miniColumn releaseYear">{{ movie.startYear }}</th>
-                            <th style="width:10%" class="miniColumn runtime">{{ movie.runtime }} minutes</th>
-                            <th style="width:10%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</th>
-                            <th style="width:10%" class="miniColumn rating">{{ movie.rating }}/10</th>
+                            <td style="width:40%" class="miniColumn title">{{ movie.title }}</td>
+                            <td style="width:12%" class="miniColumn releaseYear">{{ movie.startYear }}</td>
+                            <td style="width:12%" class="miniColumn runtime">{{ movie.runtime }} minutes</td>
+                            <td style="width:12%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</td>
+                            <td style="width:12%" class="miniColumn rating">{{ movie.rating }}/10</td>
+                            <td style="width:12%">
+                                <a href="{{ url_for('movies.update_movie', id=movie.id)}}">Edit</a>
+                            </td>
                         </tr>
-                    </table>
-                {% endfor %}
+                    {% endfor %}
+                </table>
                 <h2 id="completed">Completed</h2>
-                {% for movie in completed %}
-                    <table style="width:100%">
+                 <table style="width:100%">
+                    <tr>
+                        <th style="width:40%">Title</th>
+                        <th style="width:10%">Release Date</th>
+                        <th style="width:10%">Runtime</th>
+                        <th style="width:10%">Restrictions</th>
+                        <th style="width:10%">Rating</th>
+                    </tr>
+
+                    {% for movie in completed %}
                         <tr>
-                            <th style="width:40%" class="miniColumn title">{{ movie.title }}</th>
-                            <th style="width:10%" class="miniColumn releaseYear">{{ movie.startYear }}</th>
-                            <th style="width:10%" class="miniColumn runtime">{{ movie.runtime }} minutes</th>
-                            <th style="width:10%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</th>
-                            <th style="width:10%" class="miniColumn rating">{{ movie.rating }}/10</th>
+                            <td style="width:40%" class="miniColumn title">{{ movie.title }}</td>
+                            <td style="width:12%" class="miniColumn releaseYear">{{ movie.startYear }}</td>
+                            <td style="width:12%" class="miniColumn runtime">{{ movie.runtime }} minutes</td>
+                            <td style="width:12%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</td>
+                            <td style="width:12%" class="miniColumn rating">{{ movie.rating }}/10</td>
+                            <td style="width:12%">
+                                <a href="{{ url_for('movies.update_movie', id=movie.id)}}">Edit</a>
+                            </td>
                         </tr>
-                    </table>
-                {% endfor %}
+                    {% endfor %}
+                </table>
                 <h2 id="abandoned">Abandoned</h2>
-                {% for movie in abandoned %}
-                    <table style="width:100%">
+                 <table style="width:100%">
+                    <tr>
+                        <th style="width:40%">Title</th>
+                        <th style="width:10%">Release Date</th>
+                        <th style="width:10%">Runtime</th>
+                        <th style="width:10%">Restrictions</th>
+                        <th style="width:10%">Rating</th>
+                    </tr>
+
+                    {% for movie in abandoned %}
                         <tr>
-                            <th style="width:40%" class="miniColumn title">{{ movie.title }}</th>
-                            <th style="width:10%" class="miniColumn releaseYear">{{ movie.startYear }}</th>
-                            <th style="width:10%" class="miniColumn runtime">{{ movie.runtime }} minutes</th>
-                            <th style="width:10%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</th>
-                            <th style="width:10%" class="miniColumn rating">{{ movie.rating }}/10</th>
+                            <td style="width:40%" class="miniColumn title">{{ movie.title }}</td>
+                            <td style="width:12%" class="miniColumn releaseYear">{{ movie.startYear }}</td>
+                            <td style="width:12%" class="miniColumn runtime">{{ movie.runtime }} minutes</td>
+                            <td style="width:12%" class="miniColumn ageRestriction">{{ movie.ageRestriction }}</td>
+                            <td style="width:12%" class="miniColumn rating">{{ movie.rating }}/10</td>
+                            <td style="width:12%">
+                                <a href="{{ url_for('movies.update_movie', id=movie.id)}}">Edit</a>
+                            </td>
                         </tr>
-                    </table>
-                {% endfor %}
+                    {% endfor %}
+                </table>
             </div>
             <div class="column right">
                 <h2>Filter</h2>

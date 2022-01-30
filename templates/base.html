@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CSC2031 Blog</title>
     <link rel="stylesheet" href="{{ url_for("static", filename="main.css") }}" type="text/css"/>
-        <script src="{{ url_for("static", filename="script.js") }}">
+    <script src="{{ url_for("static", filename="script.js") }}">
     </script>
 </head>
 
@@ -22,15 +22,15 @@
                         <a href="{{ url_for('index') }}" class="navbar-item">
                             Home
                         </a>
-                                                <a href="{{ url_for('movies.movies') }}" class="navbar-item">
+                        <a href="{{ url_for('movies.movies') }}" class="navbar-item">
                             Movies
                         </a>
-                                                <a href="{{ url_for('tvshows.tvshows') }}" class="navbar-item">
+                        <a href="{{ url_for('tvshows.tvshows') }}" class="navbar-item">
                             TVShows
                         </a>
-                                                <a href="{{ url_for('genres') }}" class="navbar-item">
+{#                        <a href="{{ url_for('genres') }}" class="navbar-item">
                             Genres
-                        </a>
+                        </a>#}
                     </div>
                 </div>
             </div>

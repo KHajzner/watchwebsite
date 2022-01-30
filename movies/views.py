@@ -1,10 +1,11 @@
 import copy
+from pprint import pprint
 
 from flask import Blueprint, render_template, flash, redirect, url_for
 
 import movies.forms
 from app import db
-from models import Movie
+from models import Movie, Genre
 from movies.forms import NewMovieForm, EditMovie
 
 movies_blueprint = Blueprint("movies", __name__, template_folder="templates")
@@ -24,6 +25,7 @@ def movies():
 def update_movie(id):
     form = EditMovie()
     movie = Movie.query.filter_by(id=id).first()
+    form.genres.choices = [(a.id, a.name) for a in Genre.query.all()]
     if form.validate_on_submit():
         Movie.query.filter_by(id=id).update({"title": form.title.data})
         Movie.query.filter_by(id=id).update({"startYear": form.startYear.data})
@@ -31,9 +33,14 @@ def update_movie(id):
         Movie.query.filter_by(id=id).update({"watchStatus": form.watchStatus.data})
         Movie.query.filter_by(id=id).update({"ageRestriction": form.ageRestriction.data})
         Movie.query.filter_by(id=id).update({"rating": form.rating.data})
-        # Movie.query.fitter_by(id=id).update({"genre": form.genres.data})
 
-        db.session.commit()
+        # genre = Genre.query.filter_by(id=form.genres.data).first()
+        # db.session.add(genre)
+        # db.session.commit()
+        # current_movie = Movie.query.get(id)
+        # current_movie.movieGenres.append(genre)
+        # db.session.commit()
+
         return movies()
     movie_copy = copy.deepcopy(movie)
 

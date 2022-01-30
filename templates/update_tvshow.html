@@ -3,112 +3,114 @@
 {% block content %}
 
     <h1 class="title is-1">Add New</h1>
+
     <div class="box">
         <form method="POST">
-            <h2 class="title">Add New TV Show</h2>
+            <h3>Edit Movie</h3>
             <div class="field">
-                {{ form2.hidden_tag() }}
+                {{ form.hidden_tag() }}
                 <div class="control">
-                    {{ form2.title(class="input", placeholder="Title") }}
+                    {{ form.title(class="input", placeholder="Title") }}
                 </div>
                 <div class="error">
-                    {% for error in form2.title.errors %}
+                    {% for error in form.title.errors %}
                         {{ error }}
                     {% endfor %}
                 </div>
             </div>
             <div class="field">
                 <div class="control">
-                    {{ form2.startYear(class="input", placeholder="startYear") }}
+                    {{ form.startYear(class="input", placeholder="Start Year") }}
                 </div>
                 <div class="error">
-                    {% for error in form2.startYear.errors %}
+                    {% for error in form.startYear.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            </div>
+                    <div class="field">
+                <div class="control">
+                    {{ form.startYear(class="input", placeholder="End Year") }}
+                </div>
+                <div class="error">
+                    {% for error in form.startYear.errors %}
                         {{ error }}
                     {% endfor %}
                 </div>
             </div>
             <div class="field">
                 <div class="control">
-                    {{ form2.endYear(class="input", placeholder="endYear") }}
+                    {{ form.current_episode(class="input", placeholder="Current episode") }}
                 </div>
                 <div class="error">
-                    {% for error in form2.endYear.errors %}
+                    {% for error in form.current_episode.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            </div>
+                    <div class="field">
+                <div class="control">
+                    {{ form.episodes(class="input", placeholder="Episodes") }}
+                </div>
+                <div class="error">
+                    {% for error in form.episodes.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            </div>
+                    <div class="field">
+                <div class="control">
+                    {{ form.current_season(class="input", placeholder="Current season") }}
+                </div>
+                <div class="error">
+                    {% for error in form.current_season.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            </div>
+                    <div class="field">
+                <div class="control">
+                    {{ form.seasons(class="input", placeholder="Seasons") }}
+                </div>
+                <div class="error">
+                    {% for error in form.seasons.errors %}
                         {{ error }}
                     {% endfor %}
                 </div>
             </div>
             <div class="field">
                 <div class="control">
-                    {{ form2.current_episode(class="input", placeholder="Current episode") }}
+                    {{ form.watchStatus(class="input", placeholder="Watch Status") }}
                 </div>
                 <div class="error">
-                    {% for error in form2.current_episode.errors %}
+                    {% for error in form.watchStatus.errors %}
                         {{ error }}
                     {% endfor %}
                 </div>
             </div>
             <div class="field">
                 <div class="control">
-                    {{ form2.episodes(class="input", placeholder="Episodes") }}
+                    {{ form.ageRestriction(class="input", placeholder="Age Restriction") }}
                 </div>
                 <div class="error">
-                    {% for error in form2.episodes.errors %}
+                    {% for error in form.ageRestriction.errors %}
                         {{ error }}
                     {% endfor %}
                 </div>
             </div>
             <div class="field">
                 <div class="control">
-                    {{ form2.current_season(class="input", placeholder="Current season") }}
+                    {{ form.rating(class="input", placeholder="Rating") }}
                 </div>
                 <div class="error">
-                    {% for error in form2.current_season.errors %}
-                        {{ error }}
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    {{ form2.seasons(class="input", placeholder="Seasons") }}
-                </div>
-                <div class="error">
-                    {% for error in form2.seasons.errors %}
-                        {{ error }}
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    {{ form2.watchStatus(class="input", placeholder="watchStatus") }}
-                </div>
-                <div class="error">
-                    {% for error in form2.watchStatus.errors %}
-                        {{ error }}
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    {{ form2.ageRestriction(class="input", placeholder="ageRestriction") }}
-                </div>
-                <div class="error">
-                    {% for error in form2.ageRestriction.errors %}
-                        {{ error }}
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    {{ form2.rating(class="input", placeholder="rating") }}
-                </div>
-                <div class="error">
-                    {% for error in form2.rating.errors %}
+                    {% for error in form.rating.errors %}
                         {{ error }}
                     {% endfor %}
                 </div>
             </div>
             <div>
-                {{ form2.submit(class="button is-info is-centered") }}
+                <button onclick="closeForm()">{{ form.submit(class="button is-info is-centered") }}
+                </button>
             </div>
         </form>
     </div>

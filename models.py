@@ -51,18 +51,17 @@ class TVShow(db.Model):
 
 
 class Genre(db.Model):
-    __tablename__ = 'genre'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False, unique=True)
 
 
 movieGenres = db.Table('movieGenres',
 
-                       db.Column('genre_id', db.ForeignKey(Genre.id), primary_key=True),
-                       db.Column('movie_id', db.ForeignKey(Movie.id), primary_key=True)
+                       db.Column('genre_id', db.Integer, db.ForeignKey(Genre.id), primary_key=True),
+                       db.Column('movie_id', db.Integer, db.ForeignKey(Movie.id), primary_key=True)
                        )
 
 tvShowsGenres = db.Table('tvShowGenres',
-                         db.Column('genre_id', db.ForeignKey(Genre.id), primary_key=True),
-                         db.Column('tvshow_id', db.ForeignKey(TVShow.id), primary_key=True)
+                         db.Column('genre_id', db.Integer, db.ForeignKey(Genre.id), primary_key=True),
+                         db.Column('tvshow_id', db.Integer, db.ForeignKey(TVShow.id), primary_key=True)
                          )

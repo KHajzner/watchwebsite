@@ -33,25 +33,34 @@ def index():  # put application's code here
 @app.route('/genres', methods=['GET', 'POST'])
 def genres():
     from models import Genre
-    form = NewGenre()
-
-    form2 = DeleteGenre()
     genres = Genre.query.all()
+
+    return render_template('genres.html', genres=genres, form=NewGenre(), form2=DeleteGenre())
+
+
+@app.route('/add_genres', methods=['POST'])
+def add_genres():
+    from models import Genre
+    form = NewGenre()
     if form.submit.data and form.validate():
         genre = Genre.query.filter_by(name=form.name.data).first()
         if not genre:
             genre = Genre(name=form.name.data)
             db.session.add(genre)
             db.session.commit()
-        return redirect(url_for('genres', genres=genres, form=form, form2=form2))
+    return redirect(url_for("genres"))
 
+
+@app.route('/remove_genres', methods=['POST'])
+def remove_genres():
+    from models import Genre
+    form2 = DeleteGenre()
     # TODO: genre deletion doesn't commit to the database
     if form2.submit2.data and form2.validate():
         Genre.query.filter_by(name=form2.name2.data).delete()
         db.session.commit()
-        return redirect(url_for('genres', genres=genres, form=form, form2=form2))
 
-    return render_template('genres.html', genres=genres, form=form, form2=form2)
+    return redirect(url_for('genres'))
 
 
 if __name__ == '__main__':

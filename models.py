@@ -39,12 +39,14 @@ class TVShow(db.Model):
     ageRestriction = db.Column(db.Integer)
     rating = db.Column(db.Integer)
 
-    def __init__(self, title, startYear, endYear, seasons, episodes, watchStatus, ageRestriction, rating):
+    def __init__(self, title, startYear, endYear, current_episode, current_season, seasons, episodes, watchStatus, ageRestriction, rating):
         self.title = title
         self.startYear = startYear
         self.endYear = endYear
         self.seasons = seasons
         self.episodes = episodes
+        self.current_episode = current_episode
+        self.current_season = current_season
         self.watchStatus = watchStatus
         self.ageRestriction = ageRestriction
         self.rating = rating

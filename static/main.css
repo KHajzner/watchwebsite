@@ -9,6 +9,7 @@ body{
 a:link{
     color: #66FCF1;
     font-size: 20px;
+    text-decoration: none;
 }
 a:visited{
     color:#66FCF1;
@@ -17,22 +18,23 @@ a:hover{
     color: #45A29E;
     transition: 0.5s;
 }
-.bar{
-    position: sticky;
-    top: 0;
+.box{
+    margin-top: 30px;
 }
 h2{
-    width: 25%;
-    background-color: #4ee6da;
-    padding: 10px;
-    color: #1F2833;
+    background-color: rgba(78, 230, 218, 0.15);
+    font-weight: normal;
+    color: #66FCF1;
+    text-align: left;
     border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
     border-left: 5px solid #0B0c10;
+    display: table;
+    padding: 5px 30px 5px 5px;
+    text-transform: uppercase;
+    font-family: Calibri, monospace;
 }
 .column {
-        border-top: 3px solid #66FCF1;
-        border-bottom: 3px solid #66FCF1;
+    border-top: 3px solid #66FCF1;
     float: left;
     background: #1F2833 ;
     border-radius: 15px;
@@ -50,51 +52,14 @@ h2{
   content: "";
   display: table;
   clear: both;
-}/*
-
-.miniColumn {
-    float: left;
 }
-.title{
-    width: 30%;
-}
-.releaseYear{
-    width: 10%;
-}
-.runtime{
-    width: 10%
-}
-.ageRestriction{
-    width: 10%
-}
-.rating{
-    width: 10%
-}
-.miniRow:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.miniRow{
-    padding: 80px;
-}*/
-
 table{
     width: 100%;
     text-align: left;
 }
-.openButton{
-    background-color: red;
-}
-.popup{
-    display: none;
-    position: fixed;
-    top: 0;
-}
-
 /* Nav Bar */
 .navbar{
-    background: rgba(31, 40, 51, 0.3);
+    background-color: rgba(31, 40, 51, 0.3);
     padding: 10px;
     text-align: center;
 }
@@ -104,3 +69,27 @@ table{
     text-transform: uppercase;
     font-family: Calibri, monospace;
 }
+
+/*list bar*/
+.bar{
+        display: table;
+    background-color: #1F2833;
+    text-align: center;
+    text-decoration: none;
+    position: sticky;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 10px 5px 10px;
+    font-family: Calibri, monospace;
+    border-radius: 2px;
+}
+.bar a{
+    margin:10px;
+}
+table {
+  background-color: rgba(11, 12, 16, 0.5);
+    margin-top: -20px;
+    padding: 5px;
+}
+

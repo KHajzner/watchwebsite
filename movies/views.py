@@ -39,7 +39,7 @@ def update_movie(id):
         # db.session.commit()
         # current_movie = Movie.query.get(id)
         # current_movie.movieGenres.append(genre)
-        # db.session.commit()
+        db.session.commit()
 
         return movies()
     movie_copy = copy.deepcopy(movie)

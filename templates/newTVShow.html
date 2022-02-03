@@ -2,10 +2,10 @@
 
 {% block content %}
 
-    <h1 class="title is-1">Add New</h1>
-    <div class="box">
+    <h1 class="title is-1">Add New Post</h1>
+    <div class="box" id="form">
         <form method="POST">
-            <h2 class="title">Add New TV Show</h2>
+            <h3>TV Show Title</h3>
             <div class="field">
                 {{ form2.hidden_tag() }}
                 <div class="control">
@@ -17,6 +17,7 @@
                     {% endfor %}
                 </div>
             </div>
+                    <h3>Start Year</h3>
             <div class="field">
                 <div class="control">
                     {{ form2.startYear(class="input", placeholder="startYear") }}
@@ -27,6 +28,7 @@
                     {% endfor %}
                 </div>
             </div>
+        <h3>End Year</h3>
             <div class="field">
                 <div class="control">
                     {{ form2.endYear(class="input", placeholder="endYear") }}
@@ -37,6 +39,7 @@
                     {% endfor %}
                 </div>
             </div>
+        <h3>Current Episode</h3>
             <div class="field">
                 <div class="control">
                     {{ form2.current_episode(class="input", placeholder="Current episode") }}
@@ -47,6 +50,7 @@
                     {% endfor %}
                 </div>
             </div>
+        <h3>Episodes</h3>
             <div class="field">
                 <div class="control">
                     {{ form2.episodes(class="input", placeholder="Episodes") }}
@@ -57,6 +61,7 @@
                     {% endfor %}
                 </div>
             </div>
+        <h3>Current Season</h3>
             <div class="field">
                 <div class="control">
                     {{ form2.current_season(class="input", placeholder="Current season") }}
@@ -67,6 +72,7 @@
                     {% endfor %}
                 </div>
             </div>
+        <h3>Seasons</h3>
             <div class="field">
                 <div class="control">
                     {{ form2.seasons(class="input", placeholder="Seasons") }}
@@ -77,6 +83,7 @@
                     {% endfor %}
                 </div>
             </div>
+        <h3>Watch Status</h3>
             <div class="field">
                 <div class="control">
                     {{ form2.watchStatus(class="input", placeholder="watchStatus") }}
@@ -87,6 +94,7 @@
                     {% endfor %}
                 </div>
             </div>
+        <h3>Age Restriction</h3>
             <div class="field">
                 <div class="control">
                     {{ form2.ageRestriction(class="input", placeholder="ageRestriction") }}
@@ -97,6 +105,7 @@
                     {% endfor %}
                 </div>
             </div>
+        <h3>Rating</h3>
             <div class="field">
                 <div class="control">
                     {{ form2.rating(class="input", placeholder="rating") }}
